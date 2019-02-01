@@ -1,0 +1,28 @@
+<h1>Listado de Eventos</h1>
+<%= link_to "Crear Evento" , new_event_path%>
+<table>
+  <tr>
+    <thead>
+      <th>Nombre</th>
+      <th>Lugar</th>
+      <th>Dirección</th>
+      <th>Categoria</th>
+      <th>Tipo</th>
+      <th>Fecha Inicio</th>
+      <th>Fecha Fin</th>
+    </thead>
+  </tr>
+    <% @events.each do |event| %>
+  <tr>
+    <td><%= event.name %></td>
+    <td><%= event.place %></td>
+    <td><%= event.address %></td>
+    <td><%= event.category %></td>
+    <td><%= event.brand %></td>
+    <td><%= event.dateInit %></td>
+    <td><%= event.dateEnd %></td>
+    <td><%= link_to "Editar", edit_event_path(event) %></td>
+    <td><%= link_to "Eliminar", event, method: :delete, data: { confirm: "Deseas eliminar este artículo?"} %></td>
+  </tr>
+    <% end %>
+</table>

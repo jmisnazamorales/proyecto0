@@ -1,0 +1,51 @@
+<h1>Crear Nuevo Evento</h1>
+
+<%= form_with scope: :event, url: events_path, local: true do |form| %>
+<% if @event.errors.any? %>
+    <div>
+      <ul>
+        <% @event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<p>
+  <%= form.label :name, 'Nombre:' %><br />
+  <%= form.text_field :name %>
+</p>
+
+<p>
+  <%= form.label :location, 'Lugar:' %><br />
+  <%= form.text_field :place %>
+</p>
+
+<p>
+  <%= form.label :address, 'Dirección:' %><br />
+  <%= form.text_field :address %>
+</p>
+
+<p>
+  <%= form.label :category, 'Categoría:' %><br />
+  <%= form.select :category, @categories %>
+</p>
+
+<p>
+  <%= form.label :brand, 'Tipo:' %><br />
+  <%= form.select :brand, @brands %>
+</p>
+
+<p>
+  <%= form.label :dateInit, 'Fecha de inicio:' %><br />
+  <%= form.date_field :dateInit %>
+</p>
+
+<p>
+  <%= form.label :datEnd, 'Fecha de finalización:' %><br />
+  <%= form.date_field :dateEnd %>
+</p>
+
+<p>
+  <%= form.submit 'Crear evento' %>
+</p>
+<% end %>

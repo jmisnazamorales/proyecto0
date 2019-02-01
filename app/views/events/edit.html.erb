@@ -1,0 +1,40 @@
+<%= form_for @event do |f| %>
+  <p>
+    <%= f.label :name, 'Nombre:' %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :location, 'Lugar:' %><br />
+    <%= f.text_field :place %>
+  </p>
+
+  <p>
+    <%= f.label :address, 'Dirección:' %><br />
+    <%= f.text_field :address %>
+  </p>
+
+
+  <p>
+    <%= f.label :category, 'Categoría:' %><br />
+    <%= f.select :category, @categories %>
+  </p>
+
+  <p>
+    <%= f.label :brand, 'Tipo:' %><br />
+    <%= f.select :brand, @brands %>
+  </p>
+
+  <p>
+    <%= f.label :dateInit, 'Fecha de inicio:' %><br />
+    <%= f.date_field :dateInit %>
+  </p>
+
+  <p>
+    <%= f.label :datEnd, 'Fecha de finalización:' %><br />
+    <%= f.date_field :dateEnd %>
+  </p>
+  <div>
+    <%= f.submit 'Actualizar evento'%>
+  </div>
+<% end %>
+
